@@ -9,9 +9,11 @@ import {
     faCoins,
     faGear,
     faSignOut,
+    faPlus,
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import { Link } from 'react-router-dom';
 
 import Button from '~/components/Button';
 import styles from './Header.module.scss';
@@ -95,15 +97,18 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
+                <Link to="/" className={cx('logo')}>
                     <img src={images.logo} alt="tiktok" />
-                </div>
+                </Link>
 
                 <Search />
 
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
+                            <Button leftIcon={<FontAwesomeIcon icon={faPlus} />} rounded>
+                                Tải lên
+                            </Button>
                             <Tippy delay={[0, 50]} content="Tin nhắn" placement="bottom">
                                 <button className={cx('action-btn')}>
                                     <MessageIcon />
