@@ -20,7 +20,7 @@ import Button from '~/components/Button';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import Menu from '~/components/Popper/Menu';
-import { MailboxIcon, MessageIcon } from '~/components/Icons';
+import { MailboxIcon, MessageIcon, UpdateVideoIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 import Search from '../Search';
 
@@ -107,7 +107,7 @@ function Header() {
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
-                            <Button leftIcon={<FontAwesomeIcon icon={faPlus} />} outline>
+                            <Button leftIcon={<UpdateVideoIcon />} rounded>
                                 Tải lên
                             </Button>
                             <Tippy delay={[0, 50]} content="Tin nhắn" placement="bottom">
